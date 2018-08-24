@@ -87,10 +87,10 @@
             </exclusions>
         </dependency>-->
 
-       <!-- <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-log4j</artifactId>
-        </dependency>-->
+        <!-- <dependency>
+             <groupId>org.springframework.boot</groupId>
+             <artifactId>spring-boot-starter-log4j</artifactId>
+         </dependency>-->
 
         <!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
         <dependency>
@@ -99,6 +99,35 @@
             <version>1.2</version>
         </dependency>
 
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+
+        <!--<dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <!-- 因为使用的MySQL版本是 8.0+ 所以驱动要以下这个 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.12</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.mybatis.generator</groupId>
+            <artifactId>mybatis-generator-core</artifactId>
+            <version>1.3.2</version>
+        </dependency>
 
     </dependencies>
 
@@ -153,8 +182,45 @@
                     </configuration>
                 </plugin>
 
+                <!--<plugin>
+                    &lt;!&ndash;Mybatis-generator插件,用于自动生成Mapper和POJO&ndash;&gt;
+                    <groupId>org.mybatis.generator</groupId>
+                    <artifactId>mybatis-generator-maven-plugin</artifactId>
+                    <version>1.3.2</version>
+                    <configuration>
+                        &lt;!&ndash;配置文件的位置&ndash;&gt;
+                        <configurationFile>
+                            ${basedir}/src/main/resources/mybatis/mybatis-generator-config.xml
+                        </configurationFile>
+                        <verbose>true</verbose>
+                        <overwrite>true</overwrite>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>Generate MyBatis Artifacts</id>
+                            <goals>
+                                <goal>generate</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    &lt;!&ndash; <dependencies>
+                         <dependency>
+                         <groupId>mysql</groupId>
+                         <artifactId>mysql-connector-java</artifactId>
+                         <version>${mysql.version}</version>
+                     </dependency>
+
+                         <dependency>
+                             <groupId>org.mybatis.generator</groupId>
+                             <artifactId>mybatis-generator-core</artifactId>
+                             <version>1.3.2</version>
+                         </dependency>
+                     </dependencies>&ndash;&gt;
+                </plugin>-->
+
             </plugins>
         </pluginManagement>
+
     </build>
 
 </project>
